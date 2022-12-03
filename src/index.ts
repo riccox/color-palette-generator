@@ -1,4 +1,4 @@
-const increaseDarkness = (hex: string, lum: number): string => {
+const increaseDarkness = (hex: string, lum: number): HEXColor => {
     // validate hex string
     hex = String(hex).replace(/[^\da-f]/gi, "");
     if (hex.length < 6) {
@@ -15,10 +15,10 @@ const increaseDarkness = (hex: string, lum: number): string => {
         c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
         rgb += ("00" + c).substring(c.length);
     }
-    return rgb;
+    return rgb as HEXColor;
 };
 
-const increaseBrightness = (hex: string, lum: number): string => {
+const increaseBrightness = (hex: string, lum: number): HEXColor => {
     // strip the leading # if it's there
     hex = hex.replace(/^\s*#|\s*$/g, "");
 
@@ -39,7 +39,7 @@ const increaseBrightness = (hex: string, lum: number): string => {
         pad((0 | ((1 << 8) + r + (256 - r) * lum)).toString(16).substring(1)) +
         pad((0 | ((1 << 8) + g + (256 - g) * lum)).toString(16).substring(1)) +
         pad((0 | ((1 << 8) + b + (256 - b) * lum)).toString(16).substring(1))
-    );
+    ) as HEXColor;
 };
 
 /**
@@ -48,7 +48,7 @@ const increaseBrightness = (hex: string, lum: number): string => {
  * @param bgHex background color hex string
  * @return a new hex color string (#000 or #FFF)
  */
-export const guessForegroundColor = (bgHex: string): string => {
+export const guessForegroundColor = (bgHex: string): "#000" | "#fff" => {
     bgHex = String(bgHex).replace(/[^\da-f]/gi, "");
     if (bgHex.length < 6) {
         bgHex = bgHex[0] + bgHex[0] + bgHex[1] + bgHex[1] + bgHex[2] + bgHex[2];
@@ -63,6 +63,8 @@ export const guessForegroundColor = (bgHex: string): string => {
     return luma > 164 ? "#000" : "#fff";
 };
 
+type HEXColor = `#${string}`;
+
 /**
  * returns a new hex color string array by given primary color.
  * the primary color would be the middle of the array.
@@ -71,8 +73,8 @@ export const guessForegroundColor = (bgHex: string): string => {
  * @param numOfShades Optional, number of return shades
  * @return a new hex color string array
  */
-export const generateColorPalette = (hex: string, numOfShades: number = 10): string[] => {
-    const shades = [];
+export const generateColorPalette = (hex: string, numOfShades: number = 10): HEXColor[] => {
+    const shades: HEXColor[] = [];
     const delta = 1.8 / numOfShades;
     let lum = -0.9;
     for (let i = 0; i < numOfShades; i++) {
