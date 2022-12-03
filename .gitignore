@@ -1,3 +1,10 @@
+# editor
+.vscode
+.idea
+
+# lib dev
+pnpm-lock.yaml
+
 # Logs
 logs
 *.log

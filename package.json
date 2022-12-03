@@ -1,0 +1,39 @@
+{
+  "name": "@riccox/color-palette-generator",
+  "version": "0.0.2",
+  "description": "A type-safe, zero-deps, simple color palette generator javascript util lib",
+  "keywords": [
+    "color",
+    "palette"
+  ],
+  "author": {
+    "email": "ricco@riccox.com",
+    "name": "Ricco Xie",
+    "url": "https://www.riccox.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riccox/color-palette-generator-js.git"
+  },
+  "homepage": "https://github.com/riccox/color-palette-generator-js#readme",
+  "bugs": {
+    "url": "https://github.com/riccox/color-palette-generator-js/issues"
+  },
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts"
+  },
+  "devDependencies": {
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
+  }
+}
