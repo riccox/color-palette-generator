@@ -52,7 +52,7 @@ const increaseBrightness = (hex: string, lum: number): HEXColor => {
  * @param numOfShades Optional, number of return shades
  * @return a new hex color string array
  */
-export const generateColorPalette = (hex: string, numOfShades: number = 10): HEXColor[] => {
+export const singleColorPalette = (hex: string, numOfShades: number = 10): HEXColor[] => {
     const shades: HEXColor[] = [];
     const delta = 1.8 / numOfShades;
     let lum = -0.9;

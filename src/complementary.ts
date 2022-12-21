@@ -6,7 +6,7 @@ import {HEXColor} from "./index";
  * @param color source color hex string
  * @return a new hex color string
  */
-export const getComplementaryColor = (color: HEXColor): HEXColor => {
+export const complement = (color: HEXColor): HEXColor => {
     const colorPart = color.slice(1);
     const ind = parseInt(colorPart, 16);
     let iter = ((1 << 4 * colorPart.length) - 1 - ind).toString(16);

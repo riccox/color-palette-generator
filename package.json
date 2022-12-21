@@ -1,7 +1,7 @@
 {
-  "name": "@riccox/color-palette-generator",
-  "version": "0.0.4",
-  "description": "A type-safe, zero-deps, simple color palette generator javascript util lib",
+  "name": "@riccox/colorify",
+  "version": "0.0.1",
+  "description": "A type-safe, simple color tool javascript util lib",
   "keywords": [
     "color",
     "palette"
@@ -13,11 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/riccox/color-palette-generator-js.git"
+    "url": "git+https://github.com/riccox/colorify-js.git"
   },
-  "homepage": "https://github.com/riccox/color-palette-generator-js#readme",
+  "homepage": "https://github.com/riccox/colorify-js#readme",
   "bugs": {
-    "url": "https://github.com/riccox/color-palette-generator-js/issues"
+    "url": "https://github.com/riccox/colorify-js/issues"
   },
   "license": "MIT",
   "main": "./dist/index.js",
