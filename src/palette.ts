@@ -10,6 +10,6 @@ import {HEXColor} from "./index";
  * @return a new hex color string array
  */
 export const singleColorPalette = (color: string, numOfShades: number = 12): HEXColor[] => {
-    return chroma.scale([chroma(color).luminance(0.95), color, chroma(color).luminance(0.05)])
+    return chroma.scale([chroma(color).luminance(0.975), color, chroma(color).luminance(0.015)])
         .colors(numOfShades, 'hex') as HEXColor[];
 }
