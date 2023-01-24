@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/riccox/colorify-js/compare/v0.1.3...v0.1.4) (2023-01-24)
+
+
+### Performance Improvements
+
+* rename calculateColorPalette function ([eccf54b](https://github.com/riccox/colorify-js/commit/eccf54b71479e2c22ab90247d8e0760d69058333))
+
 ## [0.1.3](https://github.com/riccox/colorify-js/compare/v0.1.2...v0.1.3) (2023-01-24)
 
 
