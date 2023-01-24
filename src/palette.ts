@@ -2,19 +2,6 @@ import chroma from "chroma-js";
 import {HEXColor} from "./index";
 
 /**
- * returns a new hex color string array by given primary color.
- * the primary color would be near the middle of the array.
- * @author Ricco Xie
- * @param color primary color string
- * @param numOfShades Optional, number of return shades
- * @return a new hex color string array
- */
-export const singleColorPalette = (color: string, numOfShades: number = 12): HEXColor[] => {
-    return chroma.scale([chroma(color).luminance(0.995), color, chroma(color).luminance(0.015)])
-        .colors(numOfShades, 'hex') as HEXColor[];
-}
-
-/**
  * returns a new hex color string array by given primary color hue (and sat) value.
  * @author Ricco Xie
  * @param hue primary color hue
@@ -38,6 +25,18 @@ export const calculateColorPalette = (hue: number, sat: number = 0.75, numOfShad
         0.11,
         0.03
     ].map(lum => chroma.hsl(hue, sat, lum))).colors(numOfShades, 'hex') as HEXColor[];
+}
+
+/**
+ * returns a new hex color string array by given primary color.
+ * @author Ricco Xie
+ * @param color primary color string
+ * @param numOfShades Optional, number of return shades
+ * @return a new hex color string array
+ */
+export const singleColorPalette = (color: string, numOfShades: number = 12): HEXColor[] => {
+    const [hue,sat] = chroma(color).hsl();
+    return calculateColorPalette(hue,sat,numOfShades);
 }
 
 /**
