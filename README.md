@@ -1,6 +1,6 @@
 # @riccox/colorify
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/riccox/colorify-js/main.yml?branch=main)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/riccox/colorify-js/release-please.yml?branch=main)
 ![release](https://img.shields.io/github/v/release/riccox/colorify-js?display_name=release)
 ![stars](https://img.shields.io/github/stars/riccox/colorify-js)
 ![issues](https://img.shields.io/github/issues/riccox/colorify-js)
