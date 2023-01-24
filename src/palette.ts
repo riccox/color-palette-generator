@@ -19,24 +19,26 @@ export const singleColorPalette = (color: string, numOfShades: number = 12): HEX
  * the primary color would be near the middle of the array.
  * @author Ricco Xie
  * @param hue primary color hue
- * @param numOfShades Optional, number of return shades
+ * @param sat primary color sat, default:0.75
+ * @param numOfShades Optional, number of return shades, default:12
  * @return a new hex color string array
  */
-export const singleColorPaletteViaHue = (hue: number, numOfShades: number = 12): HEXColor[] => {
+export const singleColorPaletteViaHue = (hue: number, sat: number = 0.75, numOfShades: number = 12): HEXColor[] => {
     return chroma.scale([
-        chroma.hsl(hue,1,0.97), 
-        chroma.hsl(hue,1,0.94), 
-        chroma.hsl(hue,1,0.86), 
-        chroma.hsl(hue,1,0.77), 
-        chroma.hsl(hue,1,0.66), 
-        chroma.hsl(hue,1,0.50), 
-        chroma.hsl(hue,1,0.45), 
-        chroma.hsl(hue,1,0.39), 
-        chroma.hsl(hue,1,0.33), 
-        chroma.hsl(hue,1,0.27), 
-        chroma.hsl(hue,1,0.21), 
-        chroma.hsl(hue,1,0.11)
-    ]).colors(numOfShades, 'hex') as HEXColor[];
+        0.97,
+        0.94,
+        0.86,
+        0.77,
+        0.66,
+        0.50,
+        0.45,
+        0.39,
+        0.33,
+        0.27,
+        0.21,
+        0.11,
+        0.03
+    ].map(lum => chroma.hsl(hue, sat, lum))).colors(numOfShades, 'hex') as HEXColor[];
 }
 
 /**
