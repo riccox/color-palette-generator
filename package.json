@@ -1,6 +1,6 @@
 {
   "name": "@riccox/colorify",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A type-safe, simple color tool javascript util lib",
   "keywords": [
     "color",
