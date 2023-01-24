@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/riccox/colorify-js/compare/v0.1.2...v0.1.3) (2023-01-24)
+
+
+### Bug Fixes
+
+* singleColorPaletteViaHue function params ([0f4bb5d](https://github.com/riccox/colorify-js/commit/0f4bb5d486a9d896a4da611b5ab467b0e830c004))
+
 ## [0.1.2](https://github.com/riccox/colorify-js/compare/v0.1.1...v0.1.2) (2023-01-24)
 
 
