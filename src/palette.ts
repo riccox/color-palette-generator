@@ -15,15 +15,14 @@ export const singleColorPalette = (color: string, numOfShades: number = 12): HEX
 }
 
 /**
- * returns a new hex color string array by given primary color hue value.
- * the primary color would be near the middle of the array.
+ * returns a new hex color string array by given primary color hue (and sat) value.
  * @author Ricco Xie
  * @param hue primary color hue
  * @param sat primary color sat, default:0.75
  * @param numOfShades Optional, number of return shades, default:12
  * @return a new hex color string array
  */
-export const singleColorPaletteViaHue = (hue: number, sat: number = 0.75, numOfShades: number = 12): HEXColor[] => {
+export const calculateColorPalette = (hue: number, sat: number = 0.75, numOfShades: number = 12): HEXColor[] => {
     return chroma.scale([
         0.97,
         0.94,
