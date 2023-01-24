@@ -23,7 +23,7 @@ export const singleColorPalette = (color: string, numOfShades: number = 12): HEX
  * @return a new hex color string array
  */
 export const singleColorPaletteViaHue = (hue: number, numOfShades: number = 12): HEXColor[] => {
-    return chroma.scale([chroma.hsl(hue,1,0.995), chroma.hsl(hue,1,0.5), chroma.hsl(hue,1,0.015)])
+    return chroma.scale([chroma.hsl(hue,1,0.99), chroma.hsl(hue,1,0.01)])
         .colors(numOfShades, 'hex') as HEXColor[];
 }
 
