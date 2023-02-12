@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/riccox/colorify-js/compare/v0.1.5...v0.2.0) (2023-02-12)
+
+
+### Features
+
+* add radix color palette generator. ([ec62a49](https://github.com/riccox/colorify-js/commit/ec62a4953cef72904301a1feceda037127ee6010))
+
 ## [0.1.5](https://github.com/riccox/colorify-js/compare/v0.1.4...v0.1.5) (2023-01-24)
 
 
