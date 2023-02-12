@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/riccox/colorify-js/compare/v0.1.4...v0.1.5) (2023-01-24)
+
+
+### Performance Improvements
+
+* remove duplicated code ([a7c4b57](https://github.com/riccox/colorify-js/commit/a7c4b57f60c118d7c6f55df02c0eaf8d522eca88))
+
 ## [0.1.4](https://github.com/riccox/colorify-js/compare/v0.1.3...v0.1.4) (2023-01-24)
 
 
