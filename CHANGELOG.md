@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/riccox/colorify-js/compare/v0.2.0...v0.2.1) (2023-02-12)
+
+
+### Performance Improvements
+
+* generate Radix unique palettes for black & white. ([46e46c2](https://github.com/riccox/colorify-js/commit/46e46c2626ee0056bb160e9913658b9138e50c8f))
+
 ## [0.2.0](https://github.com/riccox/colorify-js/compare/v0.1.5...v0.2.0) (2023-02-12)
 
 
