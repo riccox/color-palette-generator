@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/riccox/colorify-js/compare/v0.2.1...v0.2.2) (2023-02-12)
+
+
+### Performance Improvements
+
+* foregroundColor function. ([92d4096](https://github.com/riccox/colorify-js/commit/92d4096cadf6350ac9b02805a6a13f1810d9b22c))
+
 ## [0.2.1](https://github.com/riccox/colorify-js/compare/v0.2.0...v0.2.1) (2023-02-12)
 
 
