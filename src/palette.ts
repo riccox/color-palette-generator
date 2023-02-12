@@ -61,9 +61,21 @@ export const generateRadixColorPalette = (
     0.07, 0.11, 0.136, 0.158, 0.179, 0.205, 0.243, 0.313, 0.439, 0.52, 0.61,
     0.93,
   ];
+  const lumScaleWhite = [
+    1, 0.975, 0.94, 0.905, 0.875, 0.845, 0.815, 0.77, 0.18, 0.13, 0.07, 0,
+  ];
+  const lumScaleBlack = [
+    0, 0.035, 0.075, 0.1, 0.12, 0.155, 0.19, 0.225, 0.91, 0.94, 0.975, 1,
+  ];
 
-  return (colorSchema === "dark" ? lumScaleDark : lumScaleLight).map(
-    (lum) => chroma.hsl(hue, sat, lum).hex() as HEXColor
+  if (hue > 0 && sat > 0) {
+    return (colorSchema === "dark" ? lumScaleDark : lumScaleLight).map(
+      (lum) => chroma.hsl(hue, sat, lum).hex() as HEXColor
+    );
+  }
+
+  return (colorSchema === "dark" ? lumScaleBlack : lumScaleWhite).map(
+    (lum) => chroma.hsl(0, 0, lum).hex() as HEXColor
   );
 };
 
