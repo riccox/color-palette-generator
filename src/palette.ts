@@ -90,3 +90,60 @@ export const getBlackWhiteColorPalette = (
 ): HEXColor[] => {
   return chroma.scale().colors(numOfShades, "hex") as HEXColor[];
 };
+
+export const TailwindColorScales = [
+  50, 100, 200, 300, 400, 500, 600, 700, 800, 900,
+] as const;
+export type TailwindColorScale = (typeof TailwindColorScales)[number];
+export type TailwindColorMap = Record<TailwindColorScale, HEXColor>;
+
+export const generateTailwindColorPaletteMap = (
+  color: string,
+  colorSchema: "light" | "dark" = "light"
+): RadixColorMap => {
+  const colors = singleColorPalette(color, 10);
+  const palette = colorSchema === "light" ? colors : colors.reverse();
+  return TailwindColorScales.reduce((prev, curr, i) => {
+    return { ...prev, [curr]: palette[i] };
+  }, {}) as RadixColorMap;
+};
+
+export const RadixColorScales = [
+  50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100,
+] as const;
+export type RadixColorScale = (typeof RadixColorScales)[number];
+export type RadixColorMap = Record<RadixColorScale, HEXColor>;
+
+export const generateRadixColorPaletteMap = (
+  color: string,
+  colorSchema: "light" | "dark" = "light"
+): RadixColorMap => {
+  const colors = generateRadixColorPalette(color, colorSchema);
+  return RadixColorScales.reduce((prev, curr, i) => {
+    return { ...prev, [curr]: colors[i] };
+  }, {}) as RadixColorMap;
+};
+
+export const createPalette = (
+  color: HEXColor,
+  colorSchema: "light" | "dark" = "light",
+  step: number = 5
+): Record<number, HEXColor> => {
+  const [hue, sat] = chroma(color).hsl();
+
+  const lumList: number[] = [];
+  let l = 99;
+  do {
+    lumList.push(l);
+    l -= step;
+  } while (l > 0);
+
+  colorSchema === "dark" && lumList.reverse();
+
+  const map: Record<number, HEXColor> = {};
+  lumList.forEach((lum, i) => {
+    map[i + 1] = chroma(hue, sat, lum / 100, "hsl").hex() as HEXColor;
+  });
+
+  return map;
+};
