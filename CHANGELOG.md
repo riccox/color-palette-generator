@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/riccox/colorify-js/compare/v0.2.2...v0.3.0) (2023-12-12)
+
+
+### Features
+
+* add some functions in foreground & palette. ([ff2519f](https://github.com/riccox/colorify-js/commit/ff2519f836ccbba4cf3101f12fef3f106b988790))
+
 ## [0.2.2](https://github.com/riccox/colorify-js/compare/v0.2.1...v0.2.2) (2023-02-12)
 
 
